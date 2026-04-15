@@ -1,16 +1,9 @@
-# This is a sample Python script.
+from week9.RandomWalk import RandomWalk
+sim = RandomWalk(m_trajectories=200, t_length=100)
+trajectories = sim.generate()
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+print(f"Матрица позиций готова. Размер: {trajectories.shape}")
+print(f"Финальные позиции первых 5 траекторий: {trajectories[:5, -1]}")
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Визуализация
+sim.plot_trajectories(num_to_plot=10)
